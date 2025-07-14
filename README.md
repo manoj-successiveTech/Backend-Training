@@ -2,7 +2,22 @@
 
 # 📘 Node.js Training Repository
 
-Welcome to my **Node.js training repository**! This repo documents my journey of learning Node.js through hands-on projects, daily exercises, and real-world usage examples.
+Welcome to my **Node.js training repository**! This repo documents my journey of learning Node.js through hands-on projects, daily exercises, and real-world usage examples. This repository contains step to install Node.Js on Debian-based Linux system Node.js is a powerful, open-source JavaScript runtime built on Chrome's V8 engine that allows you to run JavaScript code outside the browser, typically on the server. It’s widely used to build fast, scalable backend applications and APIs thanks to its event-driven, non-blocking I/O model.
+
+1.Run the following commands
+bash sudo apt update
+
+sudo apt install curl
+
+2.Add NodeSource Repository for Node.js LTS
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+
+3.Install Node.js and npm
+sudo apt install nodejs
+
+4. Verify Installation
+node -v
+npm -v
 
 
 ## 🛠️ Technologies & Tools
