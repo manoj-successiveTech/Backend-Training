@@ -4,9 +4,6 @@
 
 Welcome to my **Node.js training repository**! This repo documents my journey of learning Node.js through hands-on projects, daily exercises, and real-world usage examples.
 
-![Node.js Logo](https://blog.openreplay.com/images/setting-up-github-actions-for-nodejs-projects/images/hero.png)
-
----
 
 ## 🛠️ Technologies & Tools
 
