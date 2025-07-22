@@ -7,6 +7,7 @@ const express_1 = __importDefault(require("express"));
 const app_1 = __importDefault(require("../assignment-1/app"));
 const assignRouter = express_1.default.Router();
 // Example GET route
-assignRouter.use("/assignmenet-1", app_1.default);
+assignRouter.use("/assignment-1", app_1.default);
+// assignRouter.use("/assignment-2", )
 exports.default = assignRouter;
 //# sourceMappingURL=assigRouter.js.map
