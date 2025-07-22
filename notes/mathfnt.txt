@@ -1,0 +1,20 @@
+"use strict";
+// // Q8). Create four methods: add(num1, num2), sub(num1, num2), mult(num1, num2), and div(num1, num2), which perform addition, subtraction, multiplication, and division, respectively in math.js. 
+// // Utilize the lodash dependency for executing the aforementioned operations. Export all the above methods to make them accessible in any file.
+// Object.defineProperty(exports, "__esModule", { value: true });
+// exports.div = exports.mult = exports.sub = exports.add = void 0;
+// const _ = require('lodash');
+// // Addition
+// const add = (num1, num2) => _.add(num1, num2);
+// exports.add = add;
+// // Subtraction
+// const sub = (num1, num2) => _.subtract(num1, num2);
+// exports.sub = sub;
+// // Multiplication
+// const mult = (num1, num2) => _.multiply(num1, num2);
+// exports.mult = mult;
+// // Division
+// const div = (num1, num2) => _.divide(num1, num2);
+// exports.div = div;
+// //import _ from 'lodash':- ❌ Cannot find module 'lodash'
+// // This means your project doesn’t recognize the lodash module. Here’s how to fix it step-by-step:
