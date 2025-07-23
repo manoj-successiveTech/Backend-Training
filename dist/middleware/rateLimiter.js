@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.rateLimiter = void 0;
 const rateLimitMap = new Map();
-const rateLimiter = (limit = 5, interval = 60000) => {
+const rateLimiter = (limit, interval) => {
     return (req, res, next) => {
         const ip = req.ip || "unknown";
         const currentTime = Date.now();
