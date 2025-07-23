@@ -1,7 +1,9 @@
+// src/index.ts
+
 import express from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import assignRouter from "./routes/assigRouter";
+import assignRouter from "./routes/assignRouter";
 
 
 dotenv.config();
