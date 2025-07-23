@@ -87,23 +87,3 @@ Want to contribute or fork this for your own learning?
 This repository serves as my personal learning log for mastering Node.js. Whether it's core modules, building web servers, integrating databases, working with APIs, or designing scalable architectures — you'll find it here.
 
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Happy coding! 🎉  
-*Event-driven, non-blocking, and powerful: Node.js for the win!* -->
