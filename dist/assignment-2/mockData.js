@@ -1,12 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+// src/assignment-2/mockData.ts
 Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
-const userControllers_1 = require("./controllers/userControllers");
-const userRouter = express_1.default.Router();
-// This is my backend mock data get api
-userRouter.get('/data', userControllers_1.getUserData);
-exports.default = userRouter;
+exports.mockUsers = void 0;
+exports.mockUsers = [
+    { id: 1, name: "anany", email: "anany@example.com" },
+    { id: 2, name: "aaryan", email: "aaryan@example.com" },
+    { id: 3, name: "manoj", email: "manoj@example.com" },
+];
 //# sourceMappingURL=mockData.js.map

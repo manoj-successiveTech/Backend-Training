@@ -1,13 +1,13 @@
 "use strict";
-// src/assignment-2/app.ts (use the controller)
+//  src/routes/userRoutes.ts
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const userControllers_1 = require("../controllers/userControllers");
+const UserController_1 = require("../controllers/UserController");
+const authenticate_1 = require("../middleware/authenticate");
 const router = express_1.default.Router();
-// Route: /mock
-router.get("/mock", userControllers_1.getUsers);
+router.post("/seed", authenticate_1.authenticate, UserController_1.seedData);
 exports.default = router;
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=userRoutes.js.map
