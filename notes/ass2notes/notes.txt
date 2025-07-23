@@ -29,3 +29,9 @@ File	                    Responsibility
 mockData.ts	            Exports mock array of users
 userControllers.ts	    Handles the API logic (exports getUsers)
 app.ts	                Main entry: sets up Express and routes
+
+
+
+For getting mockdata user(weblink): http://localhost:3500/api/v1/assignment-2/mock
+
+- it willl route
