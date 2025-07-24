@@ -11,7 +11,7 @@ b. Include joi in your express file -
 
     const Joi = require('joi');
 
-2. Apply joi in your code, sample code as below - 
+c. Apply joi in your code, sample code as below - 
 
 // Example validation schema
 
@@ -40,4 +40,3 @@ If the request is not coming from an expected region, respond with an error.
 
 7. User Build a validation middleware that dynamically fetches validation rules from a configuration file. 
 The rules should be applied based on the route being accessed.
-

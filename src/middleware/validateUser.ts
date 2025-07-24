@@ -1,4 +1,4 @@
-// Create a validation schema using Joi (ass4)
+// Create a validation schema using Joi (ass4)- middleware/validateUser.ts
 
 
 import Joi from "joi";

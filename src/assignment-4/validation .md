@@ -5,7 +5,7 @@
 Validations are a critical component of security in any software application. They ensure that the data being processed is accurate, consistent, and secure. Validations help prevent various security vulnerabilities, such as injection attacks, cross-site scripting (XSS), and data integrity issues. 
 This document will delve into the importance of validations in security and provide a detailed description of Joi, a popular validation library.
 
-## Importance of Validation:
+## Importance of Validation
 
 -  Prevents invalid or harmful data.
 -  Protects against XSS, SQL Injection.
