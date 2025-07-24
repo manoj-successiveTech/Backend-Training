@@ -8,11 +8,13 @@ const express_1 = __importDefault(require("express"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const dotenv_1 = __importDefault(require("dotenv"));
 const assignRouter_1 = __importDefault(require("./routes/assignRouter"));
+const customHeader_1 = require("./middleware/customHeader");
 dotenv_1.default.config();
 const PORT = process.env.PORT || 3500;
 const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use((0, cookie_parser_1.default)());
+app.use((0, customHeader_1.customHeader)("Assignment-3-Header", "ExpressTS"));
 app.use("/", assignRouter_1.default);
 app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

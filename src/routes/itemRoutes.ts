@@ -7,7 +7,7 @@ const router = express.Router();
 
 // Q5 - Validate numeric query params
 router.get("/", validateQueryParams, (req, res) => {
-  res.status(200).json({ message: "Query params validated successfully!" });
+  res.status(200).json({ message: "Query paramameter validated successfully!" });
 });
 
 export default router;

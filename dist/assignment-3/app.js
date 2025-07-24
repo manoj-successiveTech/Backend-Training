@@ -13,13 +13,13 @@ const rateLimiter_1 = require("../middleware/rateLimiter");
 const UserController_1 = require("../controllers/UserController");
 const router = express_1.default.Router();
 // Assignment-3 specific middlewares
-router.use(logger_1.logger); // Q9 - Log requests
-router.use((0, rateLimiter_1.rateLimiter)(5, 60)); // Q13 - Rate limiting(limit , interval)
+router.use(logger_1.logger); // Q9 - Log requests                              // Q13 - Rate limiting(limit , interval)
 router.use((0, customHeader_1.customHeader)("Assignment-3-Header", "ExpressTS")); // Q12 - Custom header
 // Q5 - POST API with Authentication Middleware
 router.post("/seed", authenticate_1.authenticate, UserController_1.seedData); // Q6/Q7
 // Q11 - Chained Middleware Example
-router.get("/chain", errorHandler_1.errorHandler, logger_1.logger, authenticate_1.authenticate, (req, res) => {
+router.get("/chain", errorHandler_1.errorHandler, (0, rateLimiter_1.rateLimiter)(5, 60), // user request - 5 
+logger_1.logger, authenticate_1.authenticate, (req, res) => {
     res.json({ message: "Chained middleware executed successfully." });
 });
 // Sample error route to trigger error handler

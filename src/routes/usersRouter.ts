@@ -7,7 +7,7 @@ import { dynamicValidation } from "../middleware/dynamicValidation";
 
 const router = express.Router();
 
-router.post("/register", validateUser, (req, res) => {
+router.get("/register", validateUser, (req, res) => {
   return res.status(200).json({ message: "User registered successfully!" });
 });
 
