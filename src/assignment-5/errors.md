@@ -1,5 +1,3 @@
-All HTTP Status Code
-
 # HTTP Errors Code
 
 HTTP Error Codes are standardized status codes returned by a web server in response to a client's request. They indicate whether the request was successful, redirected, resulted in an error, or requires further action. These codes help both developers and users understand what happened during the communication between the client (like a web browser) and the server.
@@ -83,61 +81,3 @@ Code    	Meaning	                       Description
 503	    Service Unavailable	        The server is currently unavailable (due to overload or maintenance).
 504	    Gateway Timeout	            The server, while acting as a gateway or proxy, did not receive a timely response from the upstream server.
 505	    HTTP Version Not Supported	T  he server does not support the HTTP protocol version used in the request.
-
-Sure! Here are the main common HTTP status codes along with their meanings:
-
-1xx: Informational
-
-100 Continue: Initial part of a request received, client should continue
-101 Switching Protocols: Server is switching protocols as per client request
-102 Processing (WebDAV): Server has received and is processing the request
-
-2xx: Success
-200 OK: Request succeeded
-201 Created: Resource successfully created
-202 Accepted: Request accepted for processing
-203 Non-Authoritative Information: Info returned from a third-party source
-204 No Content: Request succeeded but no content to return
-205 Reset Content: Reset the document view
-206 Partial Content: Partial response (used for range requests)
-
-3xx: Redirection
-300 Multiple Choices: Multiple options for the resource
-301 Moved Permanently: Resource has been moved permanently
-302 Found: Resource temporarily moved
-303 See Other: Redirect to a different URL using GET
-304 Not Modified: Cached version is still valid
-305 Use Proxy: Resource must be accessed through a proxy
-307 Temporary Redirect: Temporary redirect
-308 Permanent Redirect: Permanent redirect
-
-4xx: Client Errors
-400 Bad Request: Malformed request
-401 Unauthorized: Authentication required
-402 Payment Required: Reserved for future use
-403 Forbidden: Access denied
-404 Not Found: Resource not found
-405 Method Not Allowed: HTTP method not allowed
-406 Not Acceptable: Cannot produce response matching accept headers
-407 Proxy Authentication Required: Proxy authentication needed
-408 Request Timeout: Client took too long to respond
-409 Conflict: Request conflicts with current server state
-410 Gone: Resource no longer available
-411 Length Required: Content-Length header required
-412 Precondition Failed: Precondition headers failed
-413 Payload Too Large: Request entity too large
-414 URI Too Long: URI is too long
-415 Unsupported Media Type: Media type not supported
-416 Range Not Satisfiable: Range header not satisfiable
-417 Expectation Failed: Expect header cannot be fulfilled
-426 Upgrade Required: Client should switch protocols
-
-5xx: Server Errors
-500 Internal Server Error: Generic server error
-501 Not Implemented: Server does not support functionality
-502 Bad Gateway: Invalid response from upstream server
-503 Service Unavailable: Server temporarily unavailable
-504 Gateway Timeout: Upstream server timed out
-505 HTTP Version Not Supported: HTTP version not supported
-507 Insufficient Storage (WebDAV): Server cannot store the representation
-511 Network Authentication Required: Requires network authentication
