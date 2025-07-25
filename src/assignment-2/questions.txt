@@ -1,0 +1,43 @@
+
+			                                                    Assignment-2 
+            
+            ------------Express and Node Js Introduction Backend Day-2 - Express and Nodejs Introduction---------------
+
+Q1. Prepare a comprehensive document that explains Express.js and provides an overview of other frameworks. 
+Additionally, elucidate the reasons why frameworks are necessary. Include information on REST APIs and their components and store it in client-server-architecture.md.
+
+Q2. Install and set up the latest stable version of Express.
+
+npm install express
+
+Q3. Setup  and configure cookie-parser dependency
+
+Q4. Install and set up the latest stable version of Postman.
+
+a. Open a terminal
+
+b. Add the postman repository
+
+sudo sh -c 'echo "deb https://dl.pstmn.io/download/latest/linux64" > /etc/apt/sources.list.d/postman.list'
+
+c.Import the Postman GPG Key
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+
+d. Update the package list
+
+sudo apt-get update
+
+e. Install Postman
+
+sudo apt-get install postman
+
+Q5.Add these details to the README.md file.
+
+Q6. Create a GET API that returns a mock list as a response.
+
+FileName - 
+
+a. app.js: This file will contain the main Express application code.
+ 
+b. mockData.js: This file will contain your mock data (an array, for instance).
