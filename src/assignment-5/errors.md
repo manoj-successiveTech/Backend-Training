@@ -1,4 +1,4 @@
-# HTTP Errors Code
+# HTTP Errors Code 
 
 HTTP Error Codes are standardized status codes returned by a web server in response to a client's request. They indicate whether the request was successful, redirected, resulted in an error, or requires further action. These codes help both developers and users understand what happened during the communication between the client (like a web browser) and the server.
 
@@ -21,6 +21,7 @@ To guide the client on potential next steps (like authentication, redirection, o
 These codes indicate that the request was received and understood. They are provisional responses.
 
 Code	        Meaning	                    Description
+
 100	            Continue	            The server received the request headers, and the client should proceed to send the body.
 101	        Switching Protocols	        The requester has asked the server to switch protocols (e.g., HTTP to WebSocket), and the server has agreed.
 102     	Processing (WebDAV)	        The server has received and is processing the request, but no response is available yet.
@@ -30,6 +31,7 @@ Code	        Meaning	                    Description
 These codes indicate that the request was successfully received, understood, and accepted.
 
 Code	Meaning	                        Description
+
 200	    OK	                            Standard response for successful HTTP requests.
 201	    Created	                        The request has been fulfilled and resulted in a new resource being created.
 202	    Accepted	                    The request has been accepted for processing, but the processing is not complete.
