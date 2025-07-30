@@ -11,6 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
  
+app.use('/',(req, res)=>{
+  res.send("its running");
+})
 app.use("/api/v1", assignRouter);
 
 

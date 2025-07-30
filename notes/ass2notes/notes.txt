@@ -1,0 +1,37 @@
+-what is cookkie parser
+
+A cookie parser is a tool or library used in programming, especially in web development, to read, interpret, and manage HTTP cookies. 
+Cookies are small pieces of data stored on a user's browser by websites to remember information such as login status, preferences, or tracking identifiers.
+
+A cookie parser helps developers handle cookies efficiently by converting raw cookie strings into structured data for easier manipulation and access.
+
+Purpose of a cookie parser:
+
+To extract cookie data from HTTP request headers.
+To parse the cookie string into a usable data structure (like a dictionary or object).
+To facilitate setting, retrieving, or deleting cookies within server-side code.
+
+
+
+
+
+
+
+for compiling
+-npm tsc
+-npm run dev
+
+
+
+Summary
+
+File	                    Responsibility
+mockData.ts	            Exports mock array of users
+userControllers.ts	    Handles the API logic (exports getUsers)
+app.ts	                Main entry: sets up Express and routes
+
+
+
+For getting mockdata user(weblink): http://localhost:3500/api/v1/assignment-2/mock
+
+- it willl route
