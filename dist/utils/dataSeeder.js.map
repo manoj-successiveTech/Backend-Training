@@ -1,1 +1,0 @@
-{"version":3,"file":"dataSeeder.js","sourceRoot":"","sources":["../../src/utils/dataSeeder.ts"],"names":[],"mappings":";;;AAAO,MAAM,WAAW,GAAG,GAAG,EAAE;IAC9B,OAAO;QACL,EAAE,EAAE,EAAE,CAAC,EAAE,IAAI,EAAE,aAAa,EAAE,GAAG,EAAE,EAAE,EAAE;QACvC,EAAE,EAAE,EAAE,CAAC,EAAE,IAAI,EAAE,cAAc,EAAE,GAAG,EAAE,EAAE,EAAE;KACzC,CAAC;AACJ,CAAC,CAAC;AALW,QAAA,WAAW,eAKtB"}
