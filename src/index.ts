@@ -1,7 +1,10 @@
+// src/index.ts
+
 import express from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
-import assignRouter from "./routes/assigRouter";
+import assignRouter from "./routes/assignRouter";
+import { customHeader } from "./middleware/customHeader";
 
 
 dotenv.config();
@@ -10,11 +13,9 @@ const PORT = process.env.PORT || 3500;
 const app = express();
 app.use(express.json());
 app.use(cookieParser());
+app.use(customHeader("Assignment-3-Header", "ExpressTS")); 
  
-app.use('/',(req, res)=>{
-  res.send("its running");
-})
-app.use("/api/v1", assignRouter);
+app.use("/", assignRouter);
 
 
 app.listen(PORT, () => {
