@@ -2,7 +2,7 @@
 
 import { Request, Response, NextFunction } from "express";
 
-export const validateGeoLocation = (req: Request, res: Response, next: NextFunction) => {
+export const validateGeoLocation = (err:Error,req: Request, res: Response, next: NextFunction) => {
   const ip = req.ip || "";
 
   // Dummy check (in production use a geo-IP lookup service)
@@ -12,4 +12,5 @@ export const validateGeoLocation = (req: Request, res: Response, next: NextFunct
   } else {
     res.status(403).json({ message: "Access denied: Unexpected region" });
   }
+  next(err);
 };
