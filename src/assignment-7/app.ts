@@ -2,7 +2,8 @@ import express, { Application } from "express";
 import healthRoute from "../routes/healthRoute";
 
 const app: Application = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 4000;
 
 app.use("/", healthRoute);
 
