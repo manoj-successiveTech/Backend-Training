@@ -1,3 +1,4 @@
+//controllers/userController.ts -ass3
 
 import { Request, Response } from "express";
 import { getMockData } from "../utils/dataSeeder";

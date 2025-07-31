@@ -36,6 +36,7 @@ app.get('/', (req: Request, res: Response) => {
         message: "Welcome to the Express.js Tutorial", // JSON response
     });
 });
+
 // Start the server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
