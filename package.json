@@ -11,13 +11,17 @@
     "dotenv": "^17.2.0",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
+    "http-errors": "^2.0.0",
+    "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
     "lodash": "^4.17.21",
+    "mongoose": "^8.17.0",
     "nodemon": "^3.1.10"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
+    "@types/http-errors": "^2.0.5",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.0.13",
     "ts-node": "^10.9.2",

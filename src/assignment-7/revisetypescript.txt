@@ -1,0 +1,133 @@
+TypeScript Guide with class interfaces
+
+Overview
+TypeScript is an open-source programming language developed by Microsoft. It is a strict syntactical superset of JavaScript that adds static typing, interfaces, and advanced tooling features to JavaScript.
+TypeScript helps developers catch errors early through a type system and improves the development experience with powerful IDE support, autocompletion, and code navigation.
+
+1. Basic Types and Variables in TypeScript
+TypeScript includes all the basic types available in JavaScript, along with additional types and features.
+
+Basic Types
+TypeScript includes all the basic types available in JavaScript, along with additional types and features.
+
+Type	      Description	                                                    Example
+number	Represents both integers and floating-point numbers	        let age: number = 30;
+string	Represents textual data	                                    let name: string = "Alice";
+boolean	Represents true/false values	                              let isActive: boolean = true;
+array	  List of values of a specific type	                          let scores: number[] = [90, 80, 70];
+tuple	  Array with fixed number of elements of specific types	      let user: [string, number] = ["Alice", 25];
+enum	  Defines a set of named constants	                          enum Direction { Up, Down }
+any	    A variable of any type (avoid using when possible)	        let data: any = 5;
+void	  Function that doesn't return anything	                      function log(): void {}
+null /  undefined	Represent absence of value	                      let value: null = null;
+never	  Function that never returns	                                function error(): never { throw new Error(); }
+
+2. Interfaces in TypeScript
+Interfaces define the shape of an object, specifying what properties and methods it should have. They are used for type-checking and abstraction.
+
+Example:
+
+interface User {
+  id: number;
+  name: string;
+  isActive: boolean;
+}
+
+const newUser: User = {
+  id: 1,
+  name: "Alice",
+  isActive: true,
+};
+
+You can also use interfaces with functions and classes:
+
+interface Logger {
+  log(message: string): void;
+}
+3. Classes in TypeScript
+TypeScript supports object-oriented programming through classes. You can define constructors, properties, access modifiers (public, private, protected), methods, and implement interfaces.
+
+Example:
+
+class Person {
+  private name: string;
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  greet(): string {
+    return `Hello, my name is ${this.name}`;
+  }
+}
+
+const person = new Person("Alice");
+console.log(person.greet());
+
+4. TypeScript Project Setup
+
+Install TypeScript
+
+npm install --save-dev typescript
+Installs TypeScript as a development dependency.
+
+Initialize TypeScript Configuration
+
+npx tsc --init
+Generates a tsconfig.json configuration file for TypeScript.
+
+Install Express Type Definitions
+
+npm install --save-dev @types/express
+Installs TypeScript types for the Express.js framework.
+
+5. Update tsconfig.json
+Update the file with the following configuration:
+
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "strict": true
+  }
+}
+
+6. Compile TypeScript Code
+
+npx tsc
+Compiles the TypeScript code in your project based on tsconfig.json.
+
+
+# Health Check Route Using Classes in TypeScript
+Here’s how you can structure a health check route using a class in TypeScript:
+
+Folder Structure
+
+project-root/
+├── src/
+│   ├── app.ts
+│   └── routes/
+│       └── HealthRoute.ts
+├── dist/
+├── tsconfig.json
+└── package.json
+
+Summary of Commands
+
+Command	Type	                                      Description
+npm install --save-dev typescript	Installation	    Installs TypeScript locally for development.
+npx tsc --init	                                    Configuration	Creates a base TypeScript configuration file (tsconfig.json).
+npm install --save-dev @types/express	              Installation	Installs type definitions for Express.js.
+npx tsc	                                            Compilation	Compiles TypeScript files according to tsconfig.json.
+
+This document covers:
+
+Basic TypeScript types and variables.
+
+Interfaces and classes in TypeScript.
+
+Setting up TypeScript in a project.
+
+Creating health check endpoints using TypeScript and Express with class-based routing.
