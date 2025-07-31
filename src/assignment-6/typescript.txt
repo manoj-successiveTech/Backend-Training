@@ -133,11 +133,11 @@ app.listen(PORT, () => {
 
 # Summary of Commands(TypeScript)
 
-Command	                                    Type	                Description
-npm install --save-dev typescript	    Installation	Installs TypeScript locally for development.
-npx tsc --init	                        Configuration   Creates a base TypeScript configuration file (tsconfig.json).
-npm install --save-dev @types/express	Installation	Installs type definitions for Express.js.
-npx tsc	                                Compilation	    Compiles TypeScript files according to tsconfig.json.
+Command	                                        Type	                Description
+npm install --save-dev typescript	          Installation	          Installs TypeScript locally for development.
+npx tsc --init	                            Configuration           Creates a base TypeScript configuration file (tsconfig.json).
+npm install --save-dev @types/express	      Installation	          Installs type definitions for Express.js.
+npx tsc	                                    Compilation	            Compiles TypeScript files according to tsconfig.json.
 
 
 Conclusion:-
