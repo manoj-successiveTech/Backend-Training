@@ -12,17 +12,18 @@ TypeScript includes all the basic types available in JavaScript, along with addi
 
 Basic Types
 
-Type	Description	                                                    Example
-number	Represents both integers and floating-point numbers	        let age: number = 30;
-string	Represents textual data	                                    let name: string = "Alice";
-boolean	Represents true/false values	                            let isActive: boolean = true;
-array	List of values of a specific type	                        let scores: number[] = [90, 80, 70];
-tuple	Array with fixed number of elements of specific types	    let user: [string, number] = ["Alice", 25];
-enum	Defines a set of named constants	                        enum Direction { Up, Down }
-any	A variable of any type (avoid using when possible)	            let data: any = 5;
-void	Function that doesn't return anything	                    function log(): void {}
-null / undefined	Represent absence of value	                    let value: null = null;
-never	Function that never returns	                                function error(): never { throw new Error(); }
+Type	        Description	                                                    Example
+number	    Represents both integers and floating-point numbers	            let age: number = 30;
+string	    Represents textual data	                                        let name: string = "Alice";
+boolean	    Represents true/false values	                                  let isActive: boolean = true;
+array     	List of values of a specific type	                              let scores: number[] = [90, 80, 70];
+tuple	      Array with fixed number of elements of specific types	          let user: [string, number] = ["Alice", 25];
+enum	      Defines a set of named constants	                              enum Direction { Up, Down }
+any	        A variable of any type (avoid using when possible)	            let data: any = 5;
+void	      Function that doesn't return anything	                          function log(): void {}
+null /      undefined	Represent absence of value	                          let value: null = null;
+never	      Function that never returns	                                    function error(): never { throw new Error(); }
+
 
 Variable Declaration
 TypeScript supports let, const, and var for variable declarations:
@@ -132,11 +133,11 @@ app.listen(PORT, () => {
 
 # Summary of Commands(TypeScript)
 
-Command	                                    Type	                Description
-npm install --save-dev typescript	    Installation	Installs TypeScript locally for development.
-npx tsc --init	                        Configuration   Creates a base TypeScript configuration file (tsconfig.json).
-npm install --save-dev @types/express	Installation	Installs type definitions for Express.js.
-npx tsc	                                Compilation	    Compiles TypeScript files according to tsconfig.json.
+Command	                                        Type	                Description
+npm install --save-dev typescript	          Installation	          Installs TypeScript locally for development.
+npx tsc --init	                            Configuration           Creates a base TypeScript configuration file (tsconfig.json).
+npm install --save-dev @types/express	      Installation	          Installs type definitions for Express.js.
+npx tsc	                                    Compilation	            Compiles TypeScript files according to tsconfig.json.
 
 
 Conclusion:-
