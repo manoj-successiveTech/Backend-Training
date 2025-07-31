@@ -1,0 +1,33 @@
+1.Compose a detailed document titled "typescript.md" that covers TypeScript, including information on basic types and variables in TypeScript.
+
+2.Setup of TypeScript
+
+Install TypeScript - npm install --save-dev typescript
+
+Initialize TypeScript configuration - npx tsc --init
+
+3. Install @types/express - npm install --save-dev @types/express
+
+Update tsconfig.json
+
+{
+
+  "compilerOptions": {
+
+    "target": "es6",
+
+    "module": "commonjs",
+
+    "outDir": "./dist",
+
+    "rootDir": "./src",
+
+    "strict": true
+
+  }
+
+}
+
+5. Compile TypeScript Code - npx tsc
+
+Incorporate the TypeSCript with the previous code.
