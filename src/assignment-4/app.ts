@@ -1,16 +1,29 @@
 import express from "express";
-import userRoutes from "../routes/usersRouter";
-import itemRoutes from "../routes/itemRoutes";
 import geoRoutes from "../routes/geoRoutes";
+import { validateQueryParams } from "../middleware/validateQueryParams";
 
 const router = express.Router();
+console.log("reached the app");
 
 // Q4 + Q7 - Register routes
-router.use("/user", userRoutes);
+import { validateUser } from "../middleware/validateUser";
+import { log } from "console";
+
+router.get("/register", validateUser, (req, res) => {
+  console.log("step 1");
+  
+  return res.status(200).json({ message: "User registered successfully!" });
+});
 
 // Q5 - Query params validation
-router.use("/items", itemRoutes);
+console.log("before");
 
+router.get("/items", validateQueryParams, (req, res) => {
+  console.log("inside");
+  
+  return res.status(200).json({ message: "Query paramameter validated successfully!" });
+});
+console.log("after");
 // Q6 - Geolocation validation
 router.use("/geo", geoRoutes);
 
