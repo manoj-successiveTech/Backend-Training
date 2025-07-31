@@ -3,7 +3,7 @@ import { Request, Response, NextFunction } from "express";
 const rateLimitMap = new Map<string, number[]>();
 
 export const rateLimiter = (limit: number , interval: number ) => {
-  return (req: Request, res: Response, next: NextFunction) => {
+  return (err:Error,req: Request, res: Response, next: NextFunction) => {
     const ip = req.ip || "unknown";
     const currentTime = Date.now();
 
@@ -16,9 +16,9 @@ export const rateLimiter = (limit: number , interval: number ) => {
     rateLimitMap.set(ip, timestamps);
 
     if (timestamps.length > limit) {
-      return res.status(429).json({ error: "Too many requests" });
+      return res.status(429).json({ err: "Too many requests" });
     }
 
-    next();
+    next(err);
   };
 };
