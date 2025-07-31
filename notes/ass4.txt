@@ -23,19 +23,3 @@ http://localhost:4500/assignment-4/user/register
 http://localhost:4500/assignment-4/items
 http://localhost:4500/assignment-4/geo/check-geo
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
