@@ -11,11 +11,10 @@ import connectDB from "./config/db"; // we import MongoDB connection function
 // Load environment variables from .env
 dotenv.config();
 
-// Get port from env or default to 4000
-const PORT = process.env.PORT || 4000;
 
 // ✅ Connect to MongoDB before starting the server
 connectDB();
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 
