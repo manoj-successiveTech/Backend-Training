@@ -4,23 +4,20 @@ import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import assignRouter from "./routes/assignRouter";
-<<<<<<< HEAD
-import { customHeader } from "./middleware/customHeader";
-import { errorHandleMiddleware } from "./middleware/errorMiddleware";
-import connectDB from "./config/db"; // we import MongoDB connection function
-=======
 import  customHeaderMiddleware  from "./middleware/customHeader";
 import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
->>>>>>> 995befe25735e959ff080d9fe088da98b56b3329
+import connectDB from "./config/db";
 
 // Load environment variables from .env
 dotenv.config();
 
 // Get port from env or default to 4000
 const PORT = process.env.PORT || 4000;
+const MONGO_URI = process.env.MONGO_URI as string
 
-// ✅ Connect to MongoDB before starting the server
-connectDB();
+//  Connect to MongoDB before starting the server
+
+connectDB(MONGO_URI);
 
 const app = express();
 
