@@ -4,9 +4,14 @@ import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import assignRouter from "./routes/assignRouter";
+<<<<<<< HEAD
 import { customHeader } from "./middleware/customHeader";
 import { errorHandleMiddleware } from "./middleware/errorMiddleware";
 import connectDB from "./config/db"; // we import MongoDB connection function
+=======
+import  customHeaderMiddleware  from "./middleware/customHeader";
+import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
+>>>>>>> 995befe25735e959ff080d9fe088da98b56b3329
 
 // Load environment variables from .env
 dotenv.config();
@@ -23,8 +28,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS")); 
+ 
+app.use("/", assignRouter);
+
+
 // Custom header middleware
-app.use(customHeader("Assignment-3-Header", "ExpressTS"));
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));
 
 // Log every request's method and URL
 app.use((req: Request, res: Response, next: NextFunction) => {

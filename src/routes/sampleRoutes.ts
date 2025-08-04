@@ -1,9 +1,9 @@
 // src/routes/sampleRoutes.ts -assign-3
 
 import express, { Request, Response } from "express";
-import { authenticate } from "../middleware/authenticate";
+import authenticatore from "../middleware/authenticate";
 import { logger } from "../middleware/logger";
-import { customHeader } from "../middleware/customHeader";
+import customHeaderMiddleware  from "../middleware/customHeader";
 
 
 
@@ -17,8 +17,8 @@ const router = express.Router();
 router.get(
   "/protected",
   logger,
-  customHeader("X-Server", "ExpressTS"),
-  authenticate,
+  customHeaderMiddleware.customHeader ("X-Server", "ExpressTS"),
+  authenticatore.authenticate,
   (req: Request, res: Response) => {
     const user = (req as any).user; // `user` added by authenticate middleware
     res.status(200).json({

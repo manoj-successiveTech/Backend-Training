@@ -1,10 +1,10 @@
 // assignment-3/app.ts
 
 import express, { Request, Response } from "express";
-import { authenticate } from "../middleware/authenticate";
+import authenticatore from "../middleware/authenticate";
 import { logger } from "../middleware/logger";
 import { errorHandler } from "../middleware/errorHandler";
-import { customHeader } from "../middleware/customHeader";
+import customHeaderMiddleware from "../middleware/customHeader";
 import { rateLimiter } from "../middleware/rateLimiter";
 import { seedData } from "../controllers/UserController";
 
@@ -13,10 +13,11 @@ const router = express.Router();
 // Assignment-3 specific middlewares
 
 router.use(logger);                                             // Q9 - Log requests       // Q13 - Rate limiting(limit , interval)
-router.use(customHeader("Assignment-3-Header", "ExpressTS"));   // Q12 - Custom header
+
+router.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));   // Q12 - Custom header
 
 // Q5 - POST API with Authentication Middleware
-router.post("/seed", authenticate, seedData);  // Q6/Q7
+router.post("/seed", authenticatore.authenticate, seedData);  // Q6/Q7
 
 // Q11 - Chained Middleware Example
 
@@ -25,7 +26,7 @@ router.get(
   errorHandler,
   rateLimiter(5, 60),               // user request - 5 
   logger,
-  authenticate,
+  authenticatore.authenticate,
   (req:Request, res:Response) => {
     res.json({ message: "Chained middleware executed successfully." });
   }

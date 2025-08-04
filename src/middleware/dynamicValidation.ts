@@ -2,7 +2,8 @@ import Joi from "joi";
 import { Request, Response, NextFunction } from "express";
 import { validationRules } from "../config/validationRules";
 
-export const dynamicValidation = (err: Error, req: Request, res: Response, next: NextFunction) => {
+class DynamicValidationMiddleware{
+dynamicValidation = (err: Error, req: Request, res: Response, next: NextFunction) => {
   const rules = validationRules[req.path];
 
   if (!rules) return next();
@@ -16,3 +17,6 @@ export const dynamicValidation = (err: Error, req: Request, res: Response, next:
 
   next(err);
 };
+}
+const dynaicValidationMiddleware =  new DynamicValidationMiddleware();
+export default dynaicValidationMiddleware;
