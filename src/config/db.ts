@@ -1,11 +1,9 @@
 import mongoose from "mongoose";
-import dotenv from "dotenv";
+ 
 
-dotenv.config(); // Load environment variables
-
-const connectDB = async () => {
+const connectDB = async (MONGO_URI: string) => {
   try {
-    await mongoose.connect(process.env.MONGO_URI!);
+    await mongoose.connect(MONGO_URI);
     console.log("MongoDB has been connected successfully.");
   } catch (err) {
     console.error("MongoDB connection failed:", err);

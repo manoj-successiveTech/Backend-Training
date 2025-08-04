@@ -2,7 +2,8 @@
 
 import { Request, Response, NextFunction } from "express";
 
-export const validateGeoLocation = (err:Error,req: Request, res: Response, next: NextFunction) => {
+class ValidateGeoLocationMiddleware{
+validateGeoLocation = (err:Error,req: Request, res: Response, next: NextFunction) => {
   const ip = req.ip || "";
 
   // Dummy check (in production use a geo-IP lookup service)
@@ -14,3 +15,7 @@ export const validateGeoLocation = (err:Error,req: Request, res: Response, next:
   }
   next(err);
 };
+}
+const validationGeolocationMiddleware = new ValidateGeoLocationMiddleware
+
+export default validationGeolocationMiddleware ;

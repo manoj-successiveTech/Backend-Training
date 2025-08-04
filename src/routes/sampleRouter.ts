@@ -1,11 +1,11 @@
 // sample =Router.ts (ass4)
 
-import express from "express";
-import { validateQueryParams } from "../middleware/validateQueryParams";     // import the validateQueryParams
+import express, {Request,Response} from "express";
+import validQueryMiddleware from "../middleware/validateQueryParams";     // import the validateQueryParams
 
 const router = express.Router();
 
-router.get("/items", validateQueryParams, (req, res) => {
+router.get("/items", validQueryMiddleware.validateQueryParams, (req:Request, res:Response) => {
   res.status(200).json({ message: "Items fetched successfully" });
 });
 

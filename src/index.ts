@@ -4,17 +4,27 @@ import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import assignRouter from "./routes/assignRouter";
-import { customHeader } from "./middleware/customHeader";
-import { errorHandleMiddleware } from "./middleware/errorMiddleware";
-import connectDB from "./config/db"; // we import MongoDB connection function
+import  customHeaderMiddleware  from "./middleware/customHeader";
+import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
+import connectDB from "./config/db";
 
 // Load environment variables from .env
 dotenv.config();
 
+<<<<<<< HEAD
 
 // ✅ Connect to MongoDB before starting the server
 connectDB();
 const PORT = process.env.PORT || 4000;
+=======
+// Get port from env or default to 4000
+const PORT = process.env.PORT || 4000;
+const MONGO_URI = process.env.MONGO_URI as string
+
+//  Connect to MongoDB before starting the server
+
+connectDB(MONGO_URI);
+>>>>>>> df50fb18660d096058c06bb275b62ea659ac476c
 
 const app = express();
 
@@ -22,13 +32,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(customHeader("Assignment-3-Header", "ExpressTS")); 
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS")); 
  
 app.use("/", assignRouter);
 
 
 // Custom header middleware
-app.use(customHeader("Assignment-3-Header", "ExpressTS"));
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));
 
 // Log every request's method and URL
 app.use((req: Request, res: Response, next: NextFunction) => {

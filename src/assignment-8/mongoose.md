@@ -25,7 +25,7 @@ Converts data between incompatible systems using OOP.
 ODM in MongoDB: Helps in modeling application data with schemas.
 
 What is Mongoose?
-Mongoose is a Node.js ODM library for MongoDB.
+Mongoose is a Node.js ODM(Object data model) library for MongoDB.
 
 It helps:
 

@@ -1,6 +1,6 @@
 import express, { Request, Response } from "express";
 import geoRoutes from "../routes/geoRoutes";
-import { validateQueryParams } from "../middleware/validateQueryParams";
+import validQueryMiddleware from "../middleware/validateQueryParams";
 import { validateUser } from "../middleware/validateUser";
 
 const router = express.Router();
@@ -14,7 +14,7 @@ router.post("/register", validateUser, (req:Request, res:Response) => {
 
 // Q5 - Query params validation
 
-router.get("/items", validateQueryParams, (req: Request, res:Response) => {
+router.get("/items", validQueryMiddleware.validateQueryParams, (req: Request, res:Response) => {
   return res.status(200).json({ message: "Query paramameter validated successfully!" });
 });
 
