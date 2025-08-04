@@ -18,6 +18,11 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+app.use(customHeader("Assignment-3-Header", "ExpressTS")); 
+ 
+app.use("/", assignRouter);
+
+
 // Custom header middleware
 app.use(customHeader("Assignment-3-Header", "ExpressTS"));
 
