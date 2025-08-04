@@ -3,7 +3,9 @@
 
 import { Request, Response, NextFunction } from "express";
 
-export const validateQueryParams = (err:Error,req: Request, res: Response, next: NextFunction) => {
+
+class ValidQueryMiddleware {
+validateQueryParams = (err:Error,req: Request, res: Response, next: NextFunction) => {
   const { page, limit } = req.query;
 console.log(limit, "validate Query Parameter running",page);
 
@@ -12,3 +14,6 @@ console.log(limit, "validate Query Parameter running",page);
   }
   next(err);
 };
+}
+const validQueryMiddleware = new ValidQueryMiddleware
+export default validQueryMiddleware;

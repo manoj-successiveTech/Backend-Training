@@ -1,12 +1,8 @@
-import express, { Application } from "express";
-import healthRoute from "../routes/healthRoute";
+import express from "express";
+import healthcheck from "../controllers/healtCheck";
 
-const app: Application = express();
+const router  = express.Router();
 
-const PORT = process.env.PORT || 4000;
+router.get("/health", healthcheck.pcHealth);
 
-app.use("/", healthRoute);
-
-app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
-});
+export default router;
