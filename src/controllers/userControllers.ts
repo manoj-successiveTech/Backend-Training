@@ -1,4 +1,4 @@
-// src/assignment-2/controllers/userControllers.ts
+// src/assignment-2/controllers/userControllers.ts (ass2)
 
 import { Request, Response } from "express";
 import { mockUsers } from "../assignment-2/mockData";

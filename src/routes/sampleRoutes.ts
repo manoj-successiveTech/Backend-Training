@@ -1,4 +1,4 @@
-// src/routes/sampleRoutes.ts
+// src/routes/sampleRoutes.ts -assign-3
 
 import express, { Request, Response } from "express";
 import { authenticate } from "../middleware/authenticate";

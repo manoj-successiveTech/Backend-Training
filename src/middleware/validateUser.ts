@@ -12,10 +12,11 @@ const userSchema = Joi.object({
   password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
 });
 
-export const validateUser = (req: Request, res: Response, next: NextFunction) => {
-  const { error } = userSchema.validate(req.body);
-  if (error) {
-    return res.status(400).json({ message: error.details[0].message });
+export const validateUser = (err: Error, req: Request, res: Response, next: NextFunction) => {
+  if(req.body.username !== "johnDoe123"){
+
+    next(err);
+    // return res.status(400).json({ message: "Invalid user data" });
   }
-  next();
+  next(err);
 };
