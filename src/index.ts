@@ -4,7 +4,7 @@ import express, { Request, Response, NextFunction } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
 import assignRouter from "./routes/assignRouter";
-import { customHeader } from "./middleware/customHeader";
+import  customHeaderMiddleware  from "./middleware/customHeader";
 import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
 
 // Load environment variables
@@ -18,13 +18,13 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(customHeader("Assignment-3-Header", "ExpressTS")); 
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS")); 
  
 app.use("/", assignRouter);
 
 
 // Custom header middleware
-app.use(customHeader("Assignment-3-Header", "ExpressTS"));
+app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));
 
 /** Middleware to log request method and URL */
 app.use((req: Request, res: Response, next: NextFunction) => {

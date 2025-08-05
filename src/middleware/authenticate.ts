@@ -3,7 +3,9 @@
 import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
-export const authenticate = (err: Error, req: Request, res: Response, next: NextFunction) => {
+class Authenticatore {
+
+ authenticate = (err: Error, req: Request, res: Response, next: NextFunction) => {
   const token = req.header("Authorization");
 
   if (!token) return res.status(401).json({ error: "Access Denied. No token provided." });
@@ -17,3 +19,7 @@ export const authenticate = (err: Error, req: Request, res: Response, next: Next
   }
   next(err)
 };
+}
+
+const authenticatore = new Authenticatore()
+export default authenticatore;
