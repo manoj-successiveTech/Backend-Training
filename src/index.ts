@@ -11,6 +11,12 @@ import connectDB from "./config/db";
 // Load environment variables from .env
 dotenv.config();
 
+<<<<<<< HEAD
+
+// ✅ Connect to MongoDB before starting the server
+connectDB();
+const PORT = process.env.PORT || 4000;
+=======
 // Get port from env or default to 4000
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI as string
@@ -18,6 +24,7 @@ const MONGO_URI = process.env.MONGO_URI as string
 //  Connect to MongoDB before starting the server
 
 connectDB(MONGO_URI);
+>>>>>>> df50fb18660d096058c06bb275b62ea659ac476c
 
 const app = express();
 
