@@ -6,15 +6,22 @@ import dotenv from "dotenv";
 import assignRouter from "./routes/assignRouter";
 import  customHeaderMiddleware  from "./middleware/customHeader";
 import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
+import connectDB from "./config/db";
 
-// Load environment variables
+// Load environment variables from .env
 dotenv.config();
-const PORT = process.env.PORT || 4000;
 
-// Create express app
+// Get port from env or default to 4000
+const PORT = process.env.PORT || 4000;
+const MONGO_URI = process.env.MONGO_URI as string
+
+//  Connect to MongoDB before starting the server
+
+connectDB(MONGO_URI);
+
 const app = express();
 
-// Middleware to handle JSON and cookies
+// Middleware to parse JSON and cookies
 app.use(express.json());
 app.use(cookieParser());
 
@@ -26,27 +33,20 @@ app.use("/", assignRouter);
 // Custom header middleware
 app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));
 
-/** Middleware to log request method and URL */
+// Log every request's method and URL
 app.use((req: Request, res: Response, next: NextFunction) => {
   console.log("Request Method:", req.method);
   console.log("Request URL:", req.url);
-  next(); // Move to the next middleware or route
+  next();
 });
 
-// Use routes
+// Use assignment routes
 app.use("/assign", assignRouter);
 
-// app.get('/', (req: Request, res: Response) => {
-//   throw new Error ("You got error!")
-//   return res.status(200).json({
-//     message: "Welcome to the Express.js Tutorial", // JSON response
-//   });
-// });
-
-// --- Use error-handling middleware AFTER all routes ---
+// Global error handler (should be last middleware)
 app.use(errorHandleMiddleware);
 
-// Start the server
+// Start the Express server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
