@@ -1,0 +1,147 @@
+TypeScript Guide
+
+Overview
+TypeScript is an open-source programming language developed by Microsoft. It is a strict syntactical superset of JavaScript 
+that adds static typing, interfaces, and advanced tooling features to JavaScript.
+
+TypeScript helps developers catch errors early through a type system and improves the development experience with powerful IDE 
+that support the autocompletion, and code navigation.
+
+1. Basic Types and Variables in TypeScript
+TypeScript includes all the basic types available in JavaScript, along with additional types and features.
+
+Basic Types
+
+Type	        Description	                                                    Example
+number	    Represents both integers and floating-point numbers	            let age: number = 30;
+string	    Represents textual data	                                        let name: string = "Alice";
+boolean	    Represents true/false values	                                  let isActive: boolean = true;
+array     	List of values of a specific type	                              let scores: number[] = [90, 80, 70];
+tuple	      Array with fixed number of elements of specific types	          let user: [string, number] = ["Alice", 25];
+enum	      Defines a set of named constants	                              enum Direction { Up, Down }
+any	        A variable of any type (avoid using when possible)	            let data: any = 5;
+void	      Function that doesn't return anything	                          function log(): void {}
+null /      undefined	Represent absence of value	                          let value: null = null;
+never	      Function that never returns	                                    function error(): never { throw new Error(); }
+
+
+Variable Declaration
+TypeScript supports let, const, and var for variable declarations:
+
+let – block-scoped, commonly used.
+
+const – block-scoped, immutable after assignment.
+
+var – function-scoped, avoid in modern code
+
+
+2. Setup of TypeScript
+
+Install TypeScript
+
+command - npm install --save-dev typescript
+
+Description:-This command installs TypeScript as a development dependency in your project.
+
+--save-dev: Marks TypeScript as a tool needed during development only.
+
+typescript: Refers to the TypeScript compiler (tsc) package.
+
+#Initialize TypeScript Configuration
+
+command :- npx tsc --init
+
+Description:
+This command creates a tsconfig.json file in your project root.It sets up the TypeScript compiler configuration for the project.
+
+npx: Executes the TypeScript compiler binary (tsc) without a global install.
+
+--init: Instructs tsc to generate a base configuration file.
+
+Install Express Type Definitions
+
+command:- npm install --save-dev @types/express
+
+Description:
+Installs the TypeScript type definitions for the Express.js framework.
+
+@types/express: Provides typings so that you can use Express with TypeScript.
+
+--save-dev: Adds the typings as a development-only dependency.
+
+3. Update tsconfig.json
+
+Replace or modify your tsconfig.json to the following:
+
+{
+  "compilerOptions": {
+    "target": "es6",          // Compile to ECMAScript 6
+    "module": "commonjs",     // Use CommonJS module system (Node.js compatible)
+    "outDir": "./dist",       // Output compiled JS to 'dist' folder
+    "rootDir": "./src",       // TypeScript source files live in 'src' folder
+    "strict": true            // Enable all strict type-checking options
+  }
+}
+
+Description of options:
+
+target: The version of JavaScript to compile to.
+module: Module system to use (CommonJS for Node.js).
+outDir: Folder where compiled JavaScript files will be placed.
+rootDir: Location of your TypeScript source files.
+strict: Enables strict mode for stronger type-checking and better code safety.
+
+4. Compile TypeScript Code
+
+command :- npx tsc
+
+Description:
+This command invokes the TypeScript compiler to compile your .ts files into .js.
+
+npx: Executes the compiler.
+tsc: Stands for TypeScript Compiler.
+npx tsc- It reads from tsconfig.json for compilation options.
+
+5. Incorporating TypeScript with Code
+Assume you have an Express.js application written in JavaScript. Here’s how to refactor it to TypeScript.
+
+# Folder Structure in TypeScript
+
+project-root/
+├── src/
+│   └── index.ts
+├── dist/
+├── tsconfig.json
+└── package.json
+
+Example of src/index.ts
+
+import express, { Request, Response } from "express";
+
+const app = express();
+const PORT = 4000;
+
+app.get("/", (req: Request, res: Response) => {
+  res.send("Hello, TypeScript + Express!");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});
+
+
+
+# Summary of Commands(TypeScript)
+
+Command	                                        Type	                Description
+npm install --save-dev typescript	          Installation	          Installs TypeScript locally for development.
+npx tsc --init	                            Configuration           Creates a base TypeScript configuration file (tsconfig.json).
+npm install --save-dev @types/express	      Installation	          Installs type definitions for Express.js.
+npx tsc	                                    Compilation	            Compiles TypeScript files according to tsconfig.json.
+
+
+Conclusion:-
+
+TypeScript enhances JavaScript by adding type safety, tooling, and improved readability.
+This document covers how to set up, configure, and use TypeScript in a Node.js + Express project. 
+Using TypeScript helps catch errors early, improve code maintainability, and boost developer productivity.
