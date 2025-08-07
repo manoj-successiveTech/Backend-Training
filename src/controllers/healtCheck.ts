@@ -15,7 +15,7 @@ class HealthChecker {
       const memory = os.freemem();
 
       console.log(`Step-->>>>>> 2`);
-
+      
       return res.status(200).json({
         status: true,
         message: "This is your system health!",
@@ -38,5 +38,5 @@ class HealthChecker {
   };
 }
 
-const healthcheck = new HealthChecker();
-export default healthcheck;
+const healthCheck = new HealthChecker();
+export default healthCheck;
