@@ -7,6 +7,8 @@ import assignRouter from "./routes/assignRouter";
 import  customHeaderMiddleware  from "./middleware/customHeader";
 import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import error middleware
 import connectDB from "./config/db";
+import seedOrders from "./controllers/seedingdata";
+import runAllAggregations from "./controllers/aggregationController";
 
 // Load environment variables from .env
 dotenv.config();
@@ -27,7 +29,6 @@ app.use(cookieParser());
 
 app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS")); 
  
-app.use("/", assignRouter);
 app.use(customHeaderMiddleware.customHeader("Assignment-3-Header", "ExpressTS"));
 app.use((req: Request, res: Response, next: NextFunction) => {
   console.log("Request Method:", req.method);
@@ -35,7 +36,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   next();
 });
 
-
+console.log("1");
 app.use("/assign", assignRouter);
 app.use(errorHandleMiddleware);
 app.listen(PORT, () => {
