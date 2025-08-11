@@ -131,3 +131,15 @@ Increases performance for data analytics.
 ## Conclusion
 
 MongoDB’s aggregation framework is an efficient and flexible way to perform data analysis directly within the database. By chaining multiple stages in a pipeline, you can extract meaningful insights and summaries from your data.
+
+Summary Table (Common Aggregation Methods)
+
+Method	          Purpose	                                                Example
+
+$match	            Filter docs by condition	              { $match: { status: "completed" } }
+$group	            Group docs & do calculations	          { $group: { _id: "$dept", total: { $sum: 1 } } }
+$project	          Show/hide/compute fields	              { $project: { name: 1, _id: 0 } }
+$sort	              Sort docs by field	                    {  $sort: { price: -1 } }
+$limit	            Limit number of results	                { $limit: 10 }
+$lookup	            Join with another collection	          { $lookup: { from: "users", localField: "userId", foreignField: "_id", as: "userDetails" } }
+$unwind	            Splits array into multiple docs.	      { $unwind: "$orders" }
