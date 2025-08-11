@@ -1,8 +1,11 @@
-import express from "express";
-import healthcheck from "../controllers/healtCheck";
+import express, { Request, Response } from "express";
+import healthRoute from "../routes/healthRoute";
+import router from "../assignment-1/app";
 
-const router  = express.Router();
 
-router.get("/health", healthcheck.pcHealth);
+
+const app  = express.Router();
+
+app.use("/health", healthRoute);
 
 export default router;
