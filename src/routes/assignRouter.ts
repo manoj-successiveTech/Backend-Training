@@ -5,27 +5,24 @@ import assign1router from '../assignment-1/app';
 import assign2router from '../assignment-2/app';
 import assign3router from '../assignment-3/app';
 import assign4router from '../assignment-4/app';
-<<<<<<< HEAD
-
-// import router from '../assignment-2/app';
-=======
 import assign5router from '../assignment-5/app';
 import assign7router from '../assignment-7/app';
->>>>>>> df50fb18660d096058c06bb275b62ea659ac476c
+import assign9router from '../assignment-9/app';
+import assign10router from '../assignment-10/app';
+import assign13router from '../aggregation-indexing/app'
 
 const assignRouter = express.Router();
 
 // Example GET route
-
+console.log("2");
 assignRouter.use("/assignment-1", assign1router)
 assignRouter.use("/assignment-2", assign2router)
 assignRouter.use("/assignment-3", assign3router)
 assignRouter.use("/assignment-4", assign4router)
-<<<<<<< HEAD
-
-=======
 assignRouter.use("/assignment-5", assign5router)
 assignRouter.use("/assignment-7", assign7router)
->>>>>>> df50fb18660d096058c06bb275b62ea659ac476c
+assignRouter.use("/assignment-9", assign9router)
+assignRouter.use("/assignment-10", assign10router)
+assignRouter.use("/assignment-13", assign13router)
 
 export default assignRouter;

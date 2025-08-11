@@ -7,10 +7,15 @@
     "clean": "rm -rf dist"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
-    "dotenv": "^17.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "fs": "^0.0.1-security",
+    "helmet": "^8.1.0",
     "http-errors": "^2.0.0",
     "joi": "^17.13.3",
     "jsonwebtoken": "^9.0.2",
@@ -19,13 +24,31 @@
     "nodemon": "^3.1.10"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.6",
     "@types/cookie-parser": "^1.4.9",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/helmet": "^0.0.48",
     "@types/http-errors": "^2.0.5",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^24.0.13",
+    "@types/node": "^24.2.0",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
-    "typescript": "^5.8.3"
-  }
+    "typescript": "^5.9.2"
+  },
+  "version": "1.0.0",
+  "description": "This repository contains step to install Node.Js on Linux system Node.js is a powerful, open-source JavaScript runtime built on Chrome's V8 engine that allows you to run JavaScript code outside the browser, typically on the server. It’s widely used to build fast, scalable backend applications and APIs thanks to its event-driven, non-blocking I/O model.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manoj-successiveTech/Backend-Training.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/manoj-successiveTech/Backend-Training/issues"
+  },
+  "homepage": "https://github.com/manoj-successiveTech/Backend-Training#readme"
 }
