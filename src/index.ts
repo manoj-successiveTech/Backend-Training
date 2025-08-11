@@ -9,6 +9,8 @@ import { errorHandleMiddleware } from "./middleware/errorMiddleware";  // Import
 import connectDB from "./config/db";
 import seedOrders from "./controllers/seedingdata";
 import runAllAggregations from "./controllers/aggregationController";
+import cors from "cors";
+import helmet from "helmet";
 
 // Load environment variables from .env
 dotenv.config();
@@ -22,6 +24,10 @@ const MONGO_URI = process.env.MONGO_URI as string
 connectDB(MONGO_URI);
 
 const app = express();
+app.use(helmet())
+app.use(cors({
+  methods:["GET", "POST", "PUT","PATCH", "DELETE" ], allowedHeaders:["content-type", "authorization"]
+}));
 
 // Middleware to parse JSON and cookies
 app.use(express.json());
