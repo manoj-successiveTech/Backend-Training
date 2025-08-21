@@ -11,8 +11,8 @@ export const registerUser = async (req: Request, res: Response) => {
     return res.status(400).json({ message: "User already exists" });
   }
 
-  const hashedPassword = await bcrypt.hash(password, 10);
-  const user = await User.create({ name, email, password: hashedPassword });
+
+  const user = await User.create({ name, email, password});
 
   const token = jwt.sign({ id: user._id }, "jwt_secret", { expiresIn: "7d" });
 
@@ -29,10 +29,13 @@ export const loginUser = async (req: Request, res: Response) => {
 
   const user = await User.findOne({ email });
   if (!user) {
-    return res.status(401).json({ message: "Invalid email or password" });
+    return res.status(404).json({ message: "User not exists" });
   }
 
-  const isMatch = await bcrypt.compare(password, user.password);
+  
+  const isMatch = await bcrypt.compare(password,user.password);
+  console.log(isMatch);
+  
   if (!isMatch) {
     return res.status(401).json({ message: "Invalid email or password" });
   }
